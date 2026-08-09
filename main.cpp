@@ -987,9 +987,22 @@ switch(listchoice)
 		cout<<"ENTER GENRE:"<<endl;
 		cin>>bgenre;
 		cout<<"ENTER TOTAL COPIES:"<<endl;
-		cin>>btotal;
-		cout<<"ENTER AVAILABLE COPIES:"<<endl;
-		cin>>bavail;
+cin>>btotal;
+
+while(btotal <= 0)
+{
+    cout<<"TOTAL COPIES MUST BE GREATER THAN 0. ENTER AGAIN:"<<endl;
+    cin>>btotal;
+}
+
+cout<<"ENTER AVAILABLE COPIES:"<<endl;
+cin>>bavail;
+
+while(bavail < 0 || bavail > btotal)
+{
+    cout<<"AVAILABLE COPIES MUST BE BETWEEN 0 AND "<<btotal<<". ENTER AGAIN:"<<endl;
+    cin>>bavail;
+}
 		obj.addbook(id,bookname,aname,btitle,bgenre,bavail,btotal);
 		break;
 		
